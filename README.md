@@ -31,9 +31,6 @@ Install cjxl system-wide and ensure it's available in PATH.
 ## Usage
 
 1. **Launch the Application**
-   ```bash
-   cargo run --release
-   ```
 
 2. **Add Input Files/Folders**
    - Drag and drop files or folders into the drop area
