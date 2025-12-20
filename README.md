@@ -1,6 +1,6 @@
 # JPEG XL Converter
 
-A cross-platform desktop GUI application for converting images to JPEG XL format using cjxl and egui.
+A cross-platform desktop GUI application (made in Rust and egui) for converting images to JPEG XL format using cjxl.
 
 ## Features
 
