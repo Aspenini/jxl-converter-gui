@@ -1,65 +1,34 @@
 # JPEG XL Converter
 
-A cross-platform desktop GUI application (made in Rust and egui) for converting images to JPEG XL format using cjxl.
+Cross-platform GUI for converting images to and from JPEG XL format (Rust + egui).
 
 ## Features
 
-- **Drag & Drop Support**: Drag files and folders directly into the app
-- **Native File Dialogs**: Browse for files and folders using system dialogs
-- **Batch Processing**: Convert multiple files at once
-- **Recursive Scanning**: Optionally scan subfolders
-- **Folder Structure Preservation**: Keep the original folder structure in output
-- **Lossless Conversion**: Special handling for JPEG lossless compression
-- **Quality Control**: Adjustable quality (1-100) and effort (1-9) settings
-- **Real-time Progress**: Live progress bar and detailed logging
-- **Cancellable Operations**: Stop conversions at any time
+- **Encode to JXL**: Batch convert JPEG, PNG, GIF, BMP, TIFF, WebP, PNM to JXL
+  - JPEG lossless mode (enabled by default) or quality settings (1-100)
+  - Effort control (1-9) and command preview
+- **Decode from JXL**: Convert to PNG, JPEG, PPM, PGM, or PBM
+  - Global or per-file format selection
+- **Drag & drop** files/folders, recursive scanning, folder structure preservation
+- **Real-time progress** with cancellation support
 
 ## Requirements
 
-### cjxl Binary
-
-The app requires the `cjxl` command-line tool from the JPEG XL reference implementation.
-
-**Option 1: Local tools folder (Recommended)**
-Release comes with cjxl binary in `tools` folder next to the app executable:
-- Windows: `tools/cjxl.exe`
-- macOS/Linux: `tools/cjxl`
-
-**Option 2: System PATH**
-Install cjxl system-wide and ensure it's available in PATH.
+Requires `cjxl` and `djxl` binaries from libjxl:
+- Place in `tools/` folder next to executable (recommended), or
+- Install system-wide in PATH
 
 ## Usage
 
-1. **Launch the Application**
+### Encode Tab
+1. Add files/folders (drag & drop or buttons)
+2. Choose output directory
+3. Configure options: JPEG lossless, quality (1-100), effort (1-9)
+4. Click "Start Encoding"
 
-2. **Add Input Files/Folders**
-   - Drag and drop files or folders into the drop area
-   - Or click "Add Files" / "Add Folder" buttons
-   - Mix files and folders as needed
-   - Toggle "Recursive" to scan subfolders
-
-3. **Select Output Directory**
-   - Click "Browse" to choose where converted files will be saved
-   - Toggle "Keep input folder structure" to preserve directory hierarchy
-
-4. **Configure Conversion Options**
-   - **Lossless**: Enable for lossless compression
-     - For JPEG inputs: uses `--lossless_jpeg=1`
-     - For other formats: uses `-d 0`
-   - **Quality**: 1-100 (disabled when lossless is on)
-   - **Effort**: 1-9 (higher = slower but better compression)
-
-5. **Start Conversion**
-   - Click "Start Conversion"
-   - Monitor progress in the log area
-   - Click "Cancel" to stop if needed
-
-## Supported Input Formats
-
-- JPEG (.jpg, .jpeg)
-- PNG (.png)
-- GIF (.gif)
-- BMP (.bmp)
-- TIFF (.tiff, .tif)
-- WebP (.webp)
-- PNM formats (.ppm, .pgm, .pnm)
+### Decode Tab
+1. Add JXL files/folders
+2. Choose output directory
+3. Select output format (PNG, JPEG, etc.)
+4. Optionally customize individual file formats
+5. Click "Start Decoding"
