@@ -16,7 +16,7 @@ Cross-platform GUI for converting images to and from JPEG XL format (Rust + egui
 
 Requires `cjxl` and `djxl` binaries from libjxl:
 - Place in `tools/` folder next to executable (recommended), or
-- Install system-wide in PATH
+- Install system-wide in PATH (on MacOS it is reccomended to use `brew install jpeg-xl`)
 
 ## Usage
 
